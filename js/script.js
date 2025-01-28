@@ -27,3 +27,26 @@ const showGender = user.forEach((gender) => {
 const active = user.filter((isActive) => !isActive.isActive);
 console.log(...active);
 //--5--
+const newUsers = [
+  { name: "Nick", age: 18, isFamaly: false },
+  { name: "Noa", age: 17, isFamaly: false, email: "noa@gmail.com" },
+  { name: "Leo", age: 20, isFamaly: false },
+  { name: "Den", age: 60, isFamaly: true, email: "den@gmail.com" },
+];
+const showUsers = newUsers.forEach((mail) => {
+  if (mail.email) {
+    console.log(`  User name is: ${mail.name};
+  User age is: ${mail.age};
+  User email is: ${mail.email}`);
+  } else {
+    console.log("This users haven't email");
+  }
+});
+//--6--
+const showMinAndMax = newUsers.find((min) => {
+  if (min > 18 && min < 30) {
+    console.log("This users can registrated");
+  } else {
+    console.log("This users cant registrated");
+  }
+});

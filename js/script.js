@@ -43,10 +43,10 @@ const showUsers = newUsers.forEach((mail) => {
   }
 });
 //--6--
-const showMinAndMax = newUsers.find((min) => {
-  if (min > 18 && min < 30) {
-    console.log("This users can registrated");
+const showMinAndMax = newUsers.forEach((min) => {
+  if (min.age >= 18 && min.age < 30) {
+    console.log(`This users can pass. User age is ${min.age}`);
   } else {
-    console.log("This users cant registrated");
+    console.log(`This users cann't pass. User age is ${min.age}`);
   }
 });

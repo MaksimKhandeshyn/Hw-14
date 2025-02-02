@@ -1,52 +1,50 @@
 //--1--
-const names = ["Alex", "Bill", "Tom", "Andry"];
-names.forEach((namesList, index) => console.log(`${index + 1}: ${namesList}`));
-const user = [
-  { eyeColor: "red", gender: "male", isActive: true },
-  { eyeColor: "blue", gender: "female", isActive: false },
-  { eyeColor: "black", gender: "female", isActive: true },
-  { age: 11, gender: "male", isActive: true },
+
+// const names = ["Alex", "Bill", "Tom", "Andry"];
+// const namesArr = [];
+// const showRes = names.map((name) => (name += namesArr));
+// console.log(showRes);
+
+const users = [
+  { eyeColor: "red", isMale: "male", isActive: true, name: "Tomass" },
+  { eyeColor: "blue", isMale: "female", isActive: false, name: "Mary" },
+  { eyeColor: "black", isMale: "female", isActive: true, name: "Hanna" },
+  { age: 11, isMale: "male", isActive: true, name: "Bill" },
 ];
 //--2--
-const eyes = user.forEach((printColor) => {
-  if (!printColor.eyeColor) {
-    console.log("this user hasn't parametr eyes");
-  } else {
-    console.log(`This user has: ${printColor.eyeColor} eyes`);
-  }
-});
+// const eyes = users.filter((showEyes) => showEyes.eyeColor);
+// console.log(eyes);
+
 //--3--
-const showGender = user.forEach((gender) => {
-  if (!gender.gender) {
-    console.log("This user hasn't parametr gender");
-  } else {
-    console.log(`This user is ${gender.gender}`);
-  }
-});
+// const showGender = users
+//   .filter((user) => user.isMale === "male")//фильтрация на мужчину - женщинц
+//   .map((user) => user.name);//перебор имен
+// console.log(showGender);
+
 //--4--
-const active = user.filter((isActive) => !isActive.isActive);
-console.log(...active);
+// const active = user.filter((isActive) => !isActive.isActive);
+// console.log(...active);
+
 //--5--
+
+// Завдання 5 - для перебору масиву і пошуку використай метод find
 const newUsers = [
-  { name: "Nick", age: 18, isFamaly: false },
-  { name: "Noa", age: 17, isFamaly: false, email: "noa@gmail.com" },
-  { name: "Leo", age: 20, isFamaly: false },
+  { name: "Nick", age: 18, isFamaly: false }, //1
+  { name: "Noa", age: 17, isFamaly: false, email: "noa@gmai#l.com" },
+  { name: "Leo", age: 20, isFamaly: false }, //1
   { name: "Den", age: 60, isFamaly: true, email: "den@gmail.com" },
 ];
-const showUsers = newUsers.forEach((mail) => {
-  if (mail.email) {
-    console.log(`  User name is: ${mail.name};
-  User age is: ${mail.age};
-  User email is: ${mail.email}`);
-  } else {
-    console.log("This users haven't email");
-  }
-});
+
+// const findUserByEmail = (email) =>
+//   newUsers.find((user) => user.email === email);
+
+// const user = findUserByEmail("den@gmail.com");
+// console.log(user);
+
 //--6--
-const showMinAndMax = newUsers.forEach((min) => {
-  if (min.age >= 18 && min.age < 30) {
-    console.log(`This users can pass. User age is ${min.age}`);
-  } else {
-    console.log(`This users cann't pass. User age is ${min.age}`);
-  }
-});
+
+// Завдання 6 - як результат потрібен масив . Використай filter.
+const showMinAndMax = newUsers
+  .filter((min) => min.age >= 18 && min.age < 30)
+  .map((userName) => userName.name);
+console.log(showMinAndMax);
